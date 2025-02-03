@@ -5,6 +5,7 @@
   "scripts": {
     "build": "react-router build && node -e \"require('fs').renameSync('build/client', 'build/react-playground');\"",
     "dev": "react-router dev",
+    "deploy": "gh-pages -d build/react-playground",
     "start": "npx serve -S build",
     "typecheck": "react-router typegen && tsc"
   },
