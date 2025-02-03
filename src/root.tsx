@@ -68,8 +68,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
   return (
     <MainLayout>
-      <h1 className="text-foreground font-black text-4xl">{message}</h1>
-      <p className="text-foreground py-2">{details}</p>
+      <h1 className="font-black text-4xl">{message}</h1>
+      <p className="py-2">{details}</p>
       {stack && (
         <pre className="w-full p-4 overflow-x-auto">
           <code>{stack}</code>
