@@ -12,6 +12,9 @@ import "./app.css";
 import { Header } from "~/components/app/header";
 import { Footer } from "~/components/app/footer";
 import { MainLayout } from "./components/app/layout";
+import { ThemeProvider } from "./context/theme-context";
+import type { ThemeRepository } from "./domain/theme";
+import { LocalStorageThemeRepository } from "./data/theme-repo";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -27,22 +30,25 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  let themeRepo: ThemeRepository = new LocalStorageThemeRepository();
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Header />
-        {children}
-        <Footer />
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
+    <ThemeProvider repo={themeRepo}>
+      <html lang="en">
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <Meta />
+          <Links />
+        </head>
+        <body>
+          <Header />
+          {children}
+          <Footer />
+          <ScrollRestoration />
+          <Scripts />
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
 
