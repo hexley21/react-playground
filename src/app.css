@@ -93,9 +93,16 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950 text-foreground;
+  @apply bg-background text-foreground;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+body {
+  margin: 0 auto;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
