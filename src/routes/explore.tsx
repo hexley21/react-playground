@@ -68,23 +68,13 @@ export default function Explore() {
                                 </>
                             )}
 
-                            {Array.from({ length: 5 }, (_, index) => {
-                                const pageNum = currentPage - 2 + index;
-                                if (pageNum < 1) return null;
-                                return (
-                                    <PaginationItem key={pageNum}>
-                                        <PaginationLink
-                                            href={`?page=${pageNum}`}
-                                            isActive={pageNum === currentPage}
-                                        >
-                                            {pageNum}
-                                        </PaginationLink>
-                                    </PaginationItem>
-                                );
-                            })}
-
-                            <PaginationItem>
-                                <PaginationEllipsis />
+                            <PaginationItem key={currentPage}>
+                                <PaginationLink
+                                    href={`?page=${currentPage}`}
+                                    isActive={true}
+                                >
+                                    {currentPage}
+                                </PaginationLink>
                             </PaginationItem>
 
                             <PaginationItem>
