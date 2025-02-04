@@ -12,7 +12,7 @@ export function meta({ }: Route.MetaArgs) {
 
 export default function Welcome() {
   return (
-    <>
+    <main>
       <div className="max-w-[1200px] py-32 px-4 mx-auto flex flex-row justify-between items-left">
         <div className="space-y-4">
           <h1 className="text-6xl font-bold">PLAYGROUND</h1>
@@ -48,7 +48,7 @@ export default function Welcome() {
           />
         </div>
       </div>
-      <div className="bg-secondary">
+      <div className="bg-secondary min-w-full">
         <div className="max-w-2xl py-24 px-4 flex container mx-auto space-x-8">
           <img src="logo.svg" alt="Logo" className="hidden w-56 h-56 sm:block" />
           <div>
@@ -59,6 +59,6 @@ export default function Welcome() {
           </div>
         </div>
       </div>
-    </>
+    </main>
   );
 }

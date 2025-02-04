@@ -14,7 +14,7 @@ import { Footer } from "~/components/app/footer";
 import { MainLayout } from "./components/app/layout";
 import { ThemeProvider } from "./context/theme-context";
 import type { ThemeRepository } from "./domain/theme";
-import { LocalStorageThemeRepository } from "./data/theme-repo";
+import { LocalStorageThemeRepository } from "./local/theme-repo";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
