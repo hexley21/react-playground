@@ -13,9 +13,18 @@ export function TradingViewWidget({ symbol }: { symbol: string }) {
     script.type = "text/javascript"
     script.async = true
 
+    let smbl = ""
+    if (symbol === "usdt") {
+      smbl = "USDTUSD"
+    } else if (symbol === "usdc") {
+      smbl = "USDCUSD"
+    } else {
+      smbl = `${symbol.toUpperCase()}USDT`
+    }
+
     const config = {
       autosize: true,
-      symbol: `${symbol.toUpperCase()}USDT`,
+      symbol: smbl,
       interval: "1",
       theme: "dark",
       style: "3",
