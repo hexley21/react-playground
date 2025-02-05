@@ -28,6 +28,10 @@ Create a production build:
 npm run build
 ```
 
+>The building process might fail, because the client build folder is being renamed
+
+>Just re-run the build until it's successful or just rename the `/build/client/` fodler to `/build/react-playground` by hand.
+
 ## Deployment
 
 ### Serve Locally

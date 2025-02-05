@@ -19,7 +19,7 @@ function safeGetTheme(repo: ThemeRepository) {
     return false
 }
 
-export function ThemeProvider({ children, repo }: { children: React.ReactNode repo: ThemeRepository }) {
+export function ThemeProvider({ children, repo }: { children: React.ReactNode, repo: ThemeRepository }) {
     const [darkMode, setDarkMode] = useState<boolean>(() => safeGetTheme(repo))
 
     const toggleDarkMode = () => {
