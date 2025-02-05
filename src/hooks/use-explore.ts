@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import { List } from '~/api/explorer_client'
-import type { Token } from '~/domain/token'
-import { repo } from '~/local/explore-repo'
+import { useEffect, useState } from "react"
+import { ListTokens } from "~/api/coins/explorer_client"
+import type { Token } from "~/domain/token"
+import { repo } from "~/local/explore-repo"
 
 const ErrNoTokens = new Error("no tokens")
 
@@ -21,7 +21,7 @@ export function useExplore({ currentPage = 1 }: { currentPage?: number }) {
             }
 
             try {
-                const response = await List(currentPage)
+                const response = await ListTokens(currentPage)
 
                 if (!response.length) {
                     setError(ErrNoTokens.message)

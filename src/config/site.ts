@@ -3,5 +3,5 @@ export const siteConfig = {
     author: "Hexley21",
     links: {
         github: "https://github.com/hexley21",
-    },
+    }
 }

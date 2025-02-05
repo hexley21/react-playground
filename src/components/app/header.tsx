@@ -1,14 +1,14 @@
-import { Moon, Sun } from "lucide-react";
-import { useContext } from "react";
+import { Moon, Sun } from "lucide-react"
+import { useContext } from "react"
 import { Link } from "react-router"
 import { Button } from "~/components/ui/button"
-import { ThemeContext } from "~/context/theme-context";
+import { ThemeContext } from "~/context/theme-context"
 
 export function Header() {
-    const { darkMode, toggleDarkMode } = useContext(ThemeContext);
+    const { darkMode, toggleDarkMode } = useContext(ThemeContext)
     return (
         <header className="w-full bg-card border-b border-b-border">
-            <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-3">
+            <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
                 <div className="flex items-center justify-start space-x-4">
                     <div className="flex items-center space-x-8">
                         <Link to="/" className="flex items-center space-x-2">

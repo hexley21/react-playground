@@ -1,31 +1,23 @@
-import type { Route } from "./+types/explore";
-import { useExplore } from "~/hooks/use-explore";
-import { useSearchParams } from "react-router";
-import {
-    Pagination,
-    PaginationContent,
-    PaginationEllipsis,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-} from "~/components/ui/pagination"
-import { TokenCard } from "~/components/app/token-card";
+import type { Route } from "./+types/explore"
+import { useExplore } from "~/hooks/use-explore"
+import { useSearchParams } from "react-router"
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "~/components/ui/pagination"
+import { TokenCard } from "~/components/app/token-card"
 
 export function meta({ }: Route.MetaArgs) {
     return [
         { title: "explore" },
-        { name: "description", content: "Explore tokens" },
-    ];
+        { name: "description", content: "Explore coins" },
+    ]
 }
 
 export default function Explore() {
-    const [searchParams] = useSearchParams();
-    const pageParam = searchParams.get("page");
+    const [searchParams] = useSearchParams()
+    const pageParam = searchParams.get("page")
     const page = pageParam && !isNaN(parseInt(pageParam, 10))
         ? parseInt(pageParam, 10)
-        : 1;
-    const { tokens, isLoading, error, currentPage } = useExplore({ currentPage: page });
+        : 1
+    const { tokens, isLoading, error, currentPage } = useExplore({ currentPage: page })
 
     return (
         <main className="max-w-[1200px] p-4 mx-auto">
@@ -50,13 +42,10 @@ export default function Explore() {
                     <Pagination>
                         <PaginationContent>
                             {currentPage > 1 && (
-                                <PaginationItem>
-                                    <PaginationPrevious href={`?page=${currentPage - 1}`} />
-                                </PaginationItem>
-                            )}
-
-                            {currentPage > 3 && (
                                 <>
+                                    <PaginationItem>
+                                        <PaginationPrevious href={`?page=${currentPage - 1}`} />
+                                    </PaginationItem>
                                     <PaginationItem>
                                         <PaginationLink href={`?page=1`}>
                                             1
@@ -85,5 +74,5 @@ export default function Explore() {
                 </>
             )}
         </main>
-    );
+    )
 }
