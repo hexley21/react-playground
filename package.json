@@ -5,6 +5,7 @@
   "scripts": {
     "build": "react-router build && node -e \"require('fs').renameSync('build/client', 'build/react-playground');\"",
     "dev": "react-router dev",
+    "deploy": "gh-pages -d build/react-playground",
     "start": "npx serve -S build",
     "typecheck": "react-router typegen && tsc"
   },
@@ -14,6 +15,7 @@
     "@react-router/serve": "^7.1.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.0.11",
     "isbot": "^5.1.17",
     "lucide-react": "^0.474.0",
     "react": "^19.0.0",
