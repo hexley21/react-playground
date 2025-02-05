@@ -1,6 +1,6 @@
-import { type Token } from '~/domain/token'
-import { Card, CardContent } from "~/components/ui/card" // shadcn ui import
-import { Link } from 'react-router'
+import { type Token } from "~/domain/token"
+import { Card } from "~/components/ui/card"
+import { Link } from "react-router"
 
 
 export function TokenCard({ token }: { token: Token }) {
